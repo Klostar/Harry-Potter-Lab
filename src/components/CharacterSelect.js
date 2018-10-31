@@ -5,10 +5,14 @@ import CharacterList from './CharacterList';
 const CharacterSelect = (props) => {
 
 
+const options = props.houses.map(house => {
+  return <option key={house.name} value={house.url}>{house.name}</option>
+})
+
   return (
     <Fragment>
-      <select  id="Character-select" defaultValue="default" onChange={props.handleSelectChange}>
-        <option disabled value='default'>Choose A House </option>
+      <select  id="Character-select" defaultValue="All" onChange={props.handleSelectChange}>
+        {options}
       </select>
     </Fragment>
   )
