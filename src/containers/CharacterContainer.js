@@ -29,11 +29,6 @@ class CharacterContainer extends React.Component{
     this.loadHouse(event.target.value);
   }
 
-  handleSelectedCharacter(index){
-    const selectedCharacter = this.state.characters[index];
-    this.setState({currentCharacter: selectedCharacter});
-
-  }
 
 
   render(){
@@ -42,7 +37,7 @@ class CharacterContainer extends React.Component{
         <CharacterSelect handleSelectChange={this.handleSelectChange}
           houses={this.props.houses}/>
           <CharacterList characters={this.state.characters} url={this.props.houses[0].url}
-            handleSelectChange={this.handleSelectChange} selectedCharacter={this.handleSelectedCharacter}/>
+            handleSelectChange={this.handleSelectChange}/>
 
           </div>
 

@@ -5,35 +5,23 @@ class Character extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      name: '',
-      image:'',
-      patronus:'',
-      wandCore:'',
-      wandWood:'',
-      wandLength:''
-
+      display: false
     }
-    this.renderDetails = this.renderDetails.bind(this)
+    this.handleSelectedCharacter = this.handleSelectedCharacter.bind(this)
   }
 
-  renderDetails(){
-    this.setState({
-      name: this.props.name,
-      image:this.props.image,
-      patronus:this.props.patronus,
-      wandCore:this.props.wandCore,
-      wandWood:this.props.wandWood,
-      wandLength:this.props.wandLength
-    })
 
+
+  handleSelectedCharacter(index){
+    this.setState({display: !this.state.display})
   }
 
 
   render(){
     return(
       <div className='details'>
-        <button onClick={this.renderDetails}> {this.props.name}</button>
-        <CharacterDetail details={this.props} />
+        <button onClick={this.handleSelectedCharacter}> {this.props.name}</button>
+        <CharacterDetail details={this.props} display={this.state.display}/>
       </div>
     )
   }
