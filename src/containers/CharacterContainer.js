@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterSelect from '../components/CharacterSelect'
+import CharacterList from '../components/CharacterList'
 
 class CharacterContainer extends React.Component{
   constructor(props){
@@ -7,24 +8,37 @@ class CharacterContainer extends React.Component{
     this.state = {
       characters: []
     }
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
+
+
   componentDidMount(){
-    fetch('http://hp-api.herokuapp.com/api/characters')
+    this.loadHouse(this.props.houses[0].url)
+  }
+
+  loadHouse(url){
+    fetch(url)
     .then(response => response.json())
     .then(json => this.setState({characters: json}))
     .catch(err => console.console.error())
   }
 
-render(){
-  return(
-    <div>
-    <CharacterSelect characters={this.state.characters}
+  handleSelectChange(event){
+    this.loadHouse(event.target.value);
+  }
 
-    />
-</div>
-  )
-}
+  render(){
+    return(
+      <div>
+        <CharacterSelect handleSelectChange={this.handleSelectChange}
+          houses={this.props.houses}/>
+          <CharacterList characters={this.state.characters} url={this.props.houses[0].url}
+            handleSelectChange={this.handleSelectChange}/>
+      </div>
+
+    )
+  }
 }
 
 export default CharacterContainer;
