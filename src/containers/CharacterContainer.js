@@ -21,7 +21,7 @@ class CharacterContainer extends React.Component{
     fetch(url)
     .then(response => response.json())
     .then(json => this.setState({characters: json}))
-    .catch(err => console.console.error())
+    .catch(err => console.error(err))
   }
 
   handleSelectChange(event){
