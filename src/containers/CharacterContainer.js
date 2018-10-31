@@ -1,5 +1,5 @@
 import React from 'react';
-import CharacterList from '../components/CharacterList'
+import CharacterSelect from '../components/CharacterSelect'
 
 class CharacterContainer extends React.Component{
   constructor(props){
@@ -19,7 +19,7 @@ class CharacterContainer extends React.Component{
 render(){
   return(
     <div>
-  <CharacterList/>
+    <CharacterSelect/>
 
 </div>
   )

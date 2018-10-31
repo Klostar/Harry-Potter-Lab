@@ -2,7 +2,7 @@ import React from 'react';
 
 const Character = (props) => {
 return(
-  <h2>hello</h2>
+<h1>hel1o</h1>
 )
 }
 
