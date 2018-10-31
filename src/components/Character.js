@@ -25,17 +25,15 @@ class Character extends React.Component{
       wandWood:this.props.wandWood,
       wandLength:this.props.wandLength
     })
-    return(
-      <CharacterDetail details={this.props} />
-    )
+
   }
 
 
   render(){
     return(
       <div className='details'>
-        <h3 onClick={this.renderDetails}> {this.props.name}</h3>
-
+        <button onClick={this.renderDetails}> {this.props.name}</button>
+    <CharacterDetail details={this.state} />
       </div>
     )
   }
