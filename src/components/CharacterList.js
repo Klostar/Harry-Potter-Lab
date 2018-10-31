@@ -1,9 +1,10 @@
 import React from 'react';
+import Character from './Character'
 
 const CharacterList = (props) => {
 
 return(
-    <h1>helo</h1>
+  <Character />
   )
 
 
