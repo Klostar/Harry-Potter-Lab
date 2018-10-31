@@ -16,6 +16,8 @@ const characters = props.characters.map((character, index) => {
     wandWood={character.wand.wood}
     wandCore={character.wand.core}
     wandLength={character.wand.length}
+    image={character.image}
+    selectedCharacter={props.selectedCharacter}
   />
   )
 })

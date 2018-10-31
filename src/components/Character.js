@@ -33,7 +33,7 @@ class Character extends React.Component{
     return(
       <div className='details'>
         <button onClick={this.renderDetails}> {this.props.name}</button>
-    <CharacterDetail details={this.state} />
+        <CharacterDetail details={this.props} />
       </div>
     )
   }
