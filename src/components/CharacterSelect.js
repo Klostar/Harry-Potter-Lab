@@ -1,13 +1,27 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import CharacterList from './CharacterList';
 
 
-class CharacterSelect extends React.Component{
-render(){
+const CharacterSelect = (props) => {
+
+
+
+  handleChange(event) {
+    props.onHouseSelected(event.target.value);
+
+  }
+
+
   return (
-<CharacterList/>
+    <Fragment>
+      <select id="Character-select" defaultValue="default" onChange={handleChange}>
+        <option disabled value='default'>Choose A House </option>
+      </select>
+    </Fragment>
   )
 }
-}
+
+
+
 
 export default CharacterSelect;

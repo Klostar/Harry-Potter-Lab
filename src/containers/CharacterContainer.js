@@ -19,8 +19,9 @@ class CharacterContainer extends React.Component{
 render(){
   return(
     <div>
-    <CharacterSelect/>
+    <CharacterSelect characters={this.state.characters}
 
+    />
 </div>
   )
 }
