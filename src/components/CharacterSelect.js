@@ -1,5 +1,4 @@
 import React,{Fragment} from 'react';
-import CharacterList from './CharacterList';
 
 
 const CharacterSelect = (props) => {
